@@ -21,12 +21,12 @@ public class Curso{
         this.codigo = codigo;
     }
 
-    public ListaDisciplina getList() {
-        return list;
+    public void getList() {
+        list.imprimeDisciplina();
     }
 
-    public void setList(ListaDisciplina list) {
-        this.list = list;
+    public void setList(Disciplina d) {
+        this.list.addDisciplina(d);
     }
 
     public String getNome() {
