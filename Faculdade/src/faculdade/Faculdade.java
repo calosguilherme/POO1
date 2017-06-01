@@ -13,10 +13,22 @@ public class Faculdade {
 
     public static void main(String[] args) {
         
-        Curso c = new Curso("lucas","123");
-        ListaCurso lc = new ListaCurso();
-        lc.addCurso(c);
-        lc.imprimeCurso();
+//        Curso c = new Curso("lucas","123");
+//        Professor p = new Professor("lucas","123", 40);
+//        ListaCurso lc = new ListaCurso();
+//        ListaProfessor lp = new ListaProfessor();
+//        lc.addCurso(c);
+//        lc.imprimeCurso();
+//        lp.addProfessor(p);
+//        lp.imprimeProfessor();
+//          Aluno a = new Aluno("lucas","123");
+//          ListaAluno la = new ListaAluno();
+//          la.addAluno(a);
+//          a = new Aluno("lucas","323");
+//          la.addAluno(a);
+//          la.imprimeAluno();
+          
+        
     }
     
 }

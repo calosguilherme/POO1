@@ -5,10 +5,30 @@
  */
 package faculdade;
 
+import java.util.Iterator;
+import java.util.TreeMap;
+import java.util.Map;
+
 /**
  *
  * @author lucas
  */
-public class ListaAluno {
+public class ListaAluno extends TreeMap<String,String>{
     
+    public void addAluno(Aluno a){
+        this.put(a.getMatricula(), a.getNome());
+    }
+    
+    public void imprimeAluno(){
+        Iterator iterator = this.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry entry = (Map.Entry) iterator.next();
+            System.out.print( "(" + entry.getKey() + ": " + 
+                              entry.getValue() + "), " );
+        }
+        System.out.println();
+        
+    }
+
+  
 }

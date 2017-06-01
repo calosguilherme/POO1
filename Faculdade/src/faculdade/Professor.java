@@ -12,9 +12,9 @@ package faculdade;
 public class Professor {
     private String nome;
     private String matricula;
-    private String cargaHoraria;
+    private int cargaHoraria;
 
-    public Professor(String nome, String matricula, String cargaHoraria) {
+    public Professor(String nome, String matricula, int cargaHoraria) {
         this.nome = nome;
         this.matricula = matricula;
         this.cargaHoraria = cargaHoraria;
@@ -36,11 +36,11 @@ public class Professor {
         this.matricula = matricula;
     }
 
-    public String getCargaHoraria() {
+    public int getCargaHoraria() {
         return cargaHoraria;
     }
 
-    public void setCargaHoraria(String cargaHoraria) {
+    public void setCargaHoraria(int cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
     }
     

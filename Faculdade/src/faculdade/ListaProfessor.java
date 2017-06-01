@@ -11,17 +11,16 @@ import java.util.ArrayList;
  *
  * @author lucas
  */
-public class ListaProfessor extends ArrayList{
-    private ArrayList <Professor> professores = new ArrayList();
+public class ListaProfessor extends ArrayList<Professor>{
     
     public void addProfessor(Professor c){
-        this.professores.add(c); //Adicionando Novos cursos
+        this.add(c); //Adicionando Novos cursos
     }
     
     public void imprimeProfessor(){
         int i,tam;
-        tam = this.professores.size(); //pegando o tamanho do curso
+        tam = this.size(); //pegando o tamanho do curso
         for(i = 0; i < tam; i++)
-            System.out.println(this.professores.get(i).getNome()); //imprimindo a posicao do curso
+            System.out.println(this.get(i).getNome()); //imprimindo a posicao do curso
     }
 }
