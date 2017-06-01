@@ -36,20 +36,20 @@ public class Disciplina {
         this.codigo = codigo;
     }
 
-    public ListaProfessor getListP() {
-        return listP;
+    public void getListP() {
+        listP.imprimeProfessor(); //imprime o professor referenete a esta disciplina
     }
 
-    public void setListP(ListaProfessor listP) {
-        this.listP = listP;
+    public void setListP(Professor p) {
+        this.listP.add(p); //adiciona profesores a disciplina
     }
 
-    public ListaAluno getListA() {
-        return listA;
+    public void getListA() {
+        listA.imprimeAluno(); //imprime alunos desta disciplina
     }
 
-    public void setListA(ListaAluno listA) {
-        this.listA = listA;
+    public void setListA(Aluno a) {
+        this.listA.addAluno(a);//adiciona alunos a disciplina
     }
     
     
