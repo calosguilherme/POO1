@@ -11,11 +11,8 @@ package faculdade;
  */
 public class Faculdade {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
         Curso c = new Curso("lucas","123");
         ListaCurso lc = new ListaCurso();
         lc.addCurso(c);

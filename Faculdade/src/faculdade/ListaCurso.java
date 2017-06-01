@@ -11,18 +11,17 @@ import java.util.ArrayList;
  *
  * @author lucas
  */
-public class ListaCurso extends ArrayList{
-    private ArrayList <Curso> cursos = new ArrayList();
+public class ListaCurso extends ArrayList<Curso>{
 
     public void addCurso(Curso c){
-        this.cursos.add(c); //Adicionando Novos cursos
+        this.add(c); //Adicionando Novos cursos
     }
     
     public void imprimeCurso(){
         int i,tam;
-        tam = this.cursos.size(); //pegando o tamanho do curso
+        tam = this.size(); //pegando o tamanho do curso
         for(i = 0; i < tam; i++)
-            System.out.println(this.cursos.get(i).getNome()); //imprimindo a posicao do curso
+            System.out.println(this.get(i).getNome()); //imprimindo a posicao do curso
     }
     
 }
