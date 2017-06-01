@@ -28,13 +28,29 @@ public class Faculdade {
         lc.imprimeCurso();
         lp.addProfessor(p);
         lp.imprimeProfessor();
-        la.addAluno(a);
-        la.imprimeAluno();
         ld.addDisciplina(d);
         ld.imprimeDisciplina();
-//        String a1;
-//        a1 = JOptionPane.showInputDialog("Digite um Valor");
-
+        int i = 1;
+        String x;
+        x = "";
+        while (!x.equals("0")){
+            x = JOptionPane.showInputDialog("digite 1 - criar aluno \n"
+                    + "digite 2 - criar professor \n"
+                    + "digite 3 - criar disciplina \n"
+                    + "digite 4 - criar curso \n"
+                    + "digite 0 - sair \n");
+            switch (x) {
+                case "1":
+                    String nome = JOptionPane.showInputDialog("nome do aluno");
+                    String mat = JOptionPane.showInputDialog("matricula");
+                    a = new Aluno(nome,mat);
+                    la.addAluno(a);
+                    la.imprimeAluno();
+                    break;
+                default :
+                    System.out.println("ok");
+            }
+        }
         
     }
     
