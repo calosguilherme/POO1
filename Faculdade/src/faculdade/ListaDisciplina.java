@@ -5,10 +5,25 @@
  */
 package faculdade;
 
+import java.util.HashSet;
+import java.util.Iterator;
+
 /**
  *
  * @author lucas
  */
-public class ListaDisciplina {
-    
+public class ListaDisciplina extends HashSet<Disciplina>{
+    public void addDisciplina(Disciplina d){
+        this.add(d);
+    }
+    public void imprimeDisciplina(){
+//        Iterator<Disciplina> iterator = this.iterator();
+//        while (iterator.hasNext()) {
+//            System.out.print(iterator.next().getNome() + " ");
+//        }
+//        System.out.println();
+        for(Disciplina D: this){
+            System.out.println(D.getNome());
+        }
+    }
 }

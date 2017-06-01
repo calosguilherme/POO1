@@ -15,11 +15,9 @@ public class Disciplina {
     private ListaProfessor listP;
     private ListaAluno listA;
 
-    public Disciplina(String nome, String codigo, ListaProfessor listP, ListaAluno listA) {
+    public Disciplina(String nome, String codigo) {
         this.nome = nome;
         this.codigo = codigo;
-        this.listP = listP;
-        this.listA = listA;
     }
     
     public String getNome() {
