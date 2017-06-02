@@ -23,5 +23,13 @@ public class ListaCurso extends ArrayList<Curso>{
         for(i = 0; i < tam; i++)
             System.out.println(this.get(i).getNome()); //imprimindo a posicao do curso
     }
+    public Curso getCurCod(String cod){
+        for(Curso c: this){
+            if(c.getCodigo().equals(c)){
+                return c;
+            }
+        }
+        return null;
+    }
     
 }

@@ -17,13 +17,16 @@ public class ListaDisciplina extends HashSet<Disciplina>{
         this.add(d);
     }
     public void imprimeDisciplina(){
-//        Iterator<Disciplina> iterator = this.iterator();
-//        while (iterator.hasNext()) {
-//            System.out.print(iterator.next().getNome() + " ");
-//        }
-//        System.out.println();
         for(Disciplina D: this){
             System.out.println(D.getNome());
         }
+    }
+    public Disciplina getDiscCod(String cod){
+        for(Disciplina d: this){
+            if(d.getCodigo().equals(cod)){
+                return d;
+            }
+        }
+        return null;
     }
 }

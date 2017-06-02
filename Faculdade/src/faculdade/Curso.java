@@ -19,13 +19,14 @@ public class Curso{
     public Curso(String nome, String codigo) {
         this.nome = nome;
         this.codigo = codigo;
+        this.list = new ListaDisciplina();
     }
 
     public void getList() {
         list.imprimeDisciplina();
     }
 
-    public void setList(Disciplina d) {
+    public void addDiscCurs(Disciplina d) {
         this.list.addDisciplina(d);
     }
 

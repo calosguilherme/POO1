@@ -23,4 +23,14 @@ public class ListaProfessor extends ArrayList<Professor>{
         for(i = 0; i < tam; i++)
             System.out.println(this.get(i).getNome()); //imprimindo a posicao do curso
     }
+    
+    public Professor getPorMat(String mat){
+        for(Professor px: this){
+            if(px.getMatricula().equals(mat)){
+                return px;
+            }
+        }
+        return null;
+    }
+        
 }

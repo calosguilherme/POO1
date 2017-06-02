@@ -18,7 +18,7 @@ public class Faculdade {
 
     public static void main(String[] args) {
         
-        Curso c;
+        Curso c = null;
         Professor p;
         Aluno a;
         Disciplina d = null;
@@ -27,7 +27,7 @@ public class Faculdade {
         ListaAluno la = new ListaAluno();
         ListaDisciplina ld = new ListaDisciplina();
         int i = 1;
-        String x,nome,mat,cargaHor,cod;
+        String x,nome,mat,cargaHor,cod,codC;
         x = "";
         while (!x.equals("0")){
             x = JOptionPane.showInputDialog("digite 1 - criar aluno \n"
@@ -61,8 +61,8 @@ public class Faculdade {
                     break;
                 case "4":
                     nome = JOptionPane.showInputDialog("nome do curso");
-                    cod = JOptionPane.showInputDialog("codigo curso");
-                    c = new Curso(nome,cod);
+                    codC = JOptionPane.showInputDialog("codigo curso");
+                    c = new Curso(nome,codC);
                     lc.addCurso(c);
                     lc.imprimeCurso();
                     break;
@@ -79,8 +79,8 @@ public class Faculdade {
                                 cod = JOptionPane.showInputDialog("codigo da disciplina");
                                 {
                                     try {
-                                        validacao.existeAluno(mat, la);
-                                        validacao.existeDisciplina(cod, ld);
+                                        Validacao.existeAluno(mat, la);
+                                        Validacao.existeDisciplina(cod, ld);
                                         
                                         d.addAlunoDisc(la.get(mat));
                                         d.getListA();
@@ -97,8 +97,37 @@ public class Faculdade {
                             case "2":
                                 mat = JOptionPane.showInputDialog("matricula do professor");
                                 cod = JOptionPane.showInputDialog("codigo da disciplina");
+                                {
+                                    try {
+                                        Validacao.existeProfessor(mat, lp);
+                                        Validacao.existeDisciplina(cod, ld);
+                                        d.addProfessorDisc(lp.getPorMat(mat));
+                                        d.getListP();
+                                    } catch (ExProfessorInexistente ex) {
+                                        JOptionPane.showMessageDialog(null, "professor invalido");
+                                    } catch (ExDisciplinaInexistente ex) {
+                                        JOptionPane.showMessageDialog(null, "disciplina invalida");
+                                    }
+                                }
                             break;
                             case"3":
+                                codC = JOptionPane.showInputDialog("codigo do curso");
+                                cod = JOptionPane.showInputDialog("codigo da disciplina");
+                                
+                                {
+                                    try {
+                                        
+                                        Validacao.existeCurso(codC, lc);
+                                        Validacao.existeDisciplina(cod, ld);
+                                        c.addDiscCurs(ld.getDiscCod(cod));
+                                        c.getList();
+                                        
+                                    } catch (ExCursoInexistente ex) {
+                                        JOptionPane.showMessageDialog(null, "Curso invalida");
+                                    } catch (ExDisciplinaInexistente ex) {
+                                        JOptionPane.showMessageDialog(null, "disciplina invalida");
+                                    }
+                                }
                                 
                             break;
                             default :

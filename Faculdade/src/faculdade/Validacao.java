@@ -12,7 +12,7 @@ import java.util.Map;
  *
  * @author lucas
  */
-public class validacao {
+public class Validacao {
     public static void existeAluno(String mat, ListaAluno listA) throws ExAlunoInexistente{
         Iterator iterator = listA.entrySet().iterator();
         while (iterator.hasNext()) {
@@ -41,6 +41,15 @@ public class validacao {
             }
         }
         throw new ExProfessorInexistente("Professor inexistente");
+        
+    }
+    public static void existeCurso(String cod, ListaCurso listC) throws ExCursoInexistente{
+        for(Curso c: listC){
+            if(c.getCodigo().equals(cod)){
+                return;
+            }
+        }
+        throw new ExCursoInexistente("Curso inexistente");
         
     }
 }

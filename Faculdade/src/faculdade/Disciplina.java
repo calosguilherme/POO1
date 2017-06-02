@@ -42,7 +42,7 @@ public class Disciplina {
         listP.imprimeProfessor(); //imprime o professor referenete a esta disciplina
     }
 
-    public void setListP(Professor p) {
+    public void addProfessorDisc(Professor p) {
         this.listP.add(p); //adiciona profesores a disciplina
     }
 
