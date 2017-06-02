@@ -21,9 +21,10 @@ public class ListaCurso extends ArrayList<Curso>{
         int i,tam;
         tam = this.size(); //pegando o tamanho do curso
         for(i = 0; i < tam; i++)
-            System.out.println(this.get(i).getNome()); //imprimindo a posicao do curso
+            System.out.println(this.get(i).getCodigo()
+                    + " " + this.get(i).getNome()); //imprimindo a posicao do curso
     }
-    public Curso getCurCod(String cod){
+    public Curso getCurCod(String cod){ // pegando o curso pelo codigo
         for(Curso c: this){
             if(c.getCodigo().equals(c)){
                 return c;

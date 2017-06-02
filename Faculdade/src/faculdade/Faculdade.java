@@ -30,11 +30,12 @@ public class Faculdade {
         String x,nome,mat,cargaHor,cod,codC;
         x = "";
         while (!x.equals("0")){
+            /* alimentando o banco com as informações */
             x = JOptionPane.showInputDialog("digite 1 - criar aluno \n"
                     + "digite 2 - criar professor \n"
                     + "digite 3 - criar disciplina \n"
                     + "digite 4 - criar curso \n"
-                    + "digite 5 - gerenciar faculdade \n"
+                    + "digite 5 - gerenciar faculdade \n" 
                     + "digite 0 - sair \n");
             switch (x) {
                 case "1":
@@ -48,7 +49,7 @@ public class Faculdade {
                     nome = JOptionPane.showInputDialog("nome do professor");
                     mat = JOptionPane.showInputDialog("matricula do professor");
                     cargaHor = JOptionPane.showInputDialog("carga horaria do professor");
-                    p = new Professor(nome,mat,cargaHor);
+                    p = new Professor(nome,mat,cargaHor); 
                     lp.addProfessor(p);
                     lp.imprimeProfessor();
                     break;
@@ -67,6 +68,7 @@ public class Faculdade {
                     lc.imprimeCurso();
                     break;
                 case "5":
+                    /* parte de gerenciamento com as iformações ja cadastradas */
                     while(!x.equals("0")){
                         x = JOptionPane.showInputDialog("digite 1 - alocar aluno a disciplina \n"
                     + "digite 2 - alocar professora disciplina \n"
@@ -79,10 +81,10 @@ public class Faculdade {
                                 cod = JOptionPane.showInputDialog("codigo da disciplina");
                                 {
                                     try {
-                                        Validacao.existeAluno(mat, la);
-                                        Validacao.existeDisciplina(cod, ld);
+                                        Validacao.existeAluno(mat, la); //validando se existe o aluno no banco de dados
+                                        Validacao.existeDisciplina(cod, ld); //validando se existe a disciplina no banco de dados
                                         
-                                        d.addAlunoDisc(la.get(mat));
+                                        d.addAlunoDisc(la.get(mat)); //se tudo der certo, o aluno é alocado a disciplina
                                         d.getListA();
                                         
                                     } catch (ExAlunoInexistente ex) {
@@ -99,10 +101,12 @@ public class Faculdade {
                                 cod = JOptionPane.showInputDialog("codigo da disciplina");
                                 {
                                     try {
-                                        Validacao.existeProfessor(mat, lp);
+                                        
+                                        Validacao.existeProfessor(mat, lp); //validando se o professor existe no banco de dados
                                         Validacao.existeDisciplina(cod, ld);
-                                        d.addProfessorDisc(lp.getPorMat(mat));
+                                        d.addProfessorDisc(lp.getPorMat(mat)); //se tudo der certo, aloco professor a disciplina
                                         d.getListP();
+                                        
                                     } catch (ExProfessorInexistente ex) {
                                         JOptionPane.showMessageDialog(null, "professor invalido");
                                     } catch (ExDisciplinaInexistente ex) {
@@ -117,9 +121,9 @@ public class Faculdade {
                                 {
                                     try {
                                         
-                                        Validacao.existeCurso(codC, lc);
+                                        Validacao.existeCurso(codC, lc); //verificando se o curso existe
                                         Validacao.existeDisciplina(cod, ld);
-                                        c.addDiscCurs(ld.getDiscCod(cod));
+                                        c.addDiscCurs(ld.getDiscCod(cod)); // se o curso existir eu aloco a disciplina ao curso
                                         c.getList();
                                         
                                     } catch (ExCursoInexistente ex) {

@@ -21,7 +21,9 @@ public class ListaProfessor extends ArrayList<Professor>{
         int i,tam;
         tam = this.size(); //pegando o tamanho do curso
         for(i = 0; i < tam; i++)
-            System.out.println(this.get(i).getNome()); //imprimindo a posicao do curso
+            System.out.println(this.get(i).getMatricula() + " " 
+                    + this.get(i).getNome() + " " 
+                    + this.get(i).getCargaHoraria()); //imprimindo a posicao do curso
     }
     
     public Professor getPorMat(String mat){

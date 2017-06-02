@@ -17,8 +17,8 @@ public class ListaDisciplina extends HashSet<Disciplina>{
         this.add(d);
     }
     public void imprimeDisciplina(){
-        for(Disciplina D: this){
-            System.out.println(D.getNome());
+        for(Disciplina d: this){
+            System.out.println(d.getCodigo()+ " " + d.getNome());
         }
     }
     public Disciplina getDiscCod(String cod){
