@@ -13,18 +13,18 @@ import java.util.Map;
  *
  * @author lucas
  */
-public class ListaAluno extends TreeMap<String,String>{
+public class ListaAluno extends TreeMap<String,Aluno>{
     
     public void addAluno(Aluno a){
-        this.put(a.getMatricula(), a.getNome());
+        this.put(a.getMatricula(), a);
     }
     
     public void imprimeAluno(){
         Iterator iterator = this.entrySet().iterator();
         while (iterator.hasNext()) {
-            Map.Entry entry = (Map.Entry) iterator.next();
+            Map.Entry<String,Aluno> entry = (Map.Entry) iterator.next();
             System.out.print( "(" + entry.getKey() + ": " + 
-                              entry.getValue() + "), " );
+                              entry.getValue().getNome() + "), " );
         }
         System.out.println();
         

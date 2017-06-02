@@ -6,6 +6,8 @@
 package faculdade;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,7 +21,7 @@ public class Faculdade {
         Curso c;
         Professor p;
         Aluno a;
-        Disciplina d;
+        Disciplina d = null;
         ListaCurso lc = new ListaCurso();
         ListaProfessor lp = new ListaProfessor();
         ListaAluno la = new ListaAluno();
@@ -63,6 +65,46 @@ public class Faculdade {
                     c = new Curso(nome,cod);
                     lc.addCurso(c);
                     lc.imprimeCurso();
+                    break;
+                case "5":
+                    while(!x.equals("0")){
+                        x = JOptionPane.showInputDialog("digite 1 - alocar aluno a disciplina \n"
+                    + "digite 2 - alocar professora disciplina \n"
+                    + "digite 3 - alocar disciplina a curso \n"
+                    + "digite 0 - sair \n");
+                    
+                        switch(x){
+                            case "1":
+                                mat = JOptionPane.showInputDialog("matricula do aluno");
+                                cod = JOptionPane.showInputDialog("codigo da disciplina");
+                                {
+                                    try {
+                                        validacao.existeAluno(mat, la);
+                                        validacao.existeDisciplina(cod, ld);
+                                        
+                                        d.addAlunoDisc(la.get(mat));
+                                        d.getListA();
+                                        
+                                    } catch (ExAlunoInexistente ex) {
+                                        JOptionPane.showMessageDialog(null, "aluno invalido");
+                                    } catch (ExDisciplinaInexistente ex) {
+                                        JOptionPane.showMessageDialog(null, "disciplina invalida");
+                                    }
+                                        
+                                }
+                                
+                            break;
+                            case "2":
+                                mat = JOptionPane.showInputDialog("matricula do professor");
+                                cod = JOptionPane.showInputDialog("codigo da disciplina");
+                            break;
+                            case"3":
+                                
+                            break;
+                            default :
+                                System.out.println("ok");
+                        }
+                    }
                     break;
                 default :
                     System.out.println("ok");

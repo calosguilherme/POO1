@@ -18,6 +18,8 @@ public class Disciplina {
     public Disciplina(String nome, String codigo) {
         this.nome = nome;
         this.codigo = codigo;
+        this.listA = new ListaAluno();
+        this.listP = new ListaProfessor();
     }
     
     public String getNome() {
@@ -48,7 +50,7 @@ public class Disciplina {
         listA.imprimeAluno(); //imprime alunos desta disciplina
     }
 
-    public void setListA(Aluno a) {
+    public void addAlunoDisc(Aluno a) {
         this.listA.addAluno(a);//adiciona alunos a disciplina
     }
     
