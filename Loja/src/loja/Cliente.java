@@ -4,16 +4,16 @@ package loja;
 
 public class Cliente {
     private String nome;
-    private String Endereço;
+    private String endereco;
     private String telefone;
-    private String Email;
+    private String email;
     private ListaProduto listP;
 
-    public Cliente(String nome, String Endereço, String telefone, String Email) {
+    public Cliente(String nome, String endereco, String telefone, String email) {
         this.nome = nome;
-        this.Endereço = Endereço;
+        this.endereco = endereco;
         this.telefone = telefone;
-        this.Email = Email;
+        this.email = email;
         this.listP = new ListaProduto();
     }
 
@@ -33,12 +33,12 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public String getEndereço() {
-        return Endereço;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndereço(String Endereço) {
-        this.Endereço = Endereço;
+    public void setEndereço(String endereco) {
+        this.endereco = endereco;
     }
 
     public String getTelefone() {
@@ -50,11 +50,11 @@ public class Cliente {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
-    public void setEmail(String Email) {
-        this.Email = Email;
+    public void setEmail(String email) {
+        this.email = email;
     }
     
     

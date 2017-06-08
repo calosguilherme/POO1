@@ -8,13 +8,13 @@ public class ListaCliente extends HashSet<Cliente>{
     public void addCliente(Cliente c){
         this.add(c);
     }
-    public void imprimeDisciplina(){
+    public void imprimeCliente(){
         for(Cliente c: this){
-            System.out.println(c.getNome()+ " " + c.getEmail() + " "
-                    + c.getTelefone()+ " " + c.getEndereço());
+            System.out.println(" nome: " + c.getNome()+ " email: " + c.getEmail() + " telefone: "
+                    + c.getTelefone()+ " endereco: " + c.getEndereco());
         }
     }
-    public Cliente getCliNome(String nome){ //pegando o cliente pelo nome
+    public Cliente buscaCliente(String nome){ //pegando o cliente pelo nome
         for(Cliente c: this){
             if(c.getNome().equals(nome)){
                 return c;
@@ -22,4 +22,11 @@ public class ListaCliente extends HashSet<Cliente>{
         }
         return null;
     }
+    public void excluiCLiente(String nome){
+        for(Cliente c: this){
+            if(c.getNome().equals(nome)){
+                this.remove(c);
+            }
+        }
+     }
 }
