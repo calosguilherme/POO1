@@ -1,6 +1,8 @@
 
 package loja;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
@@ -50,6 +52,23 @@ public class Loja {
                                 + "digite 0 - sair");
                         switch(x2){
                             case "1":
+                                nome = JOptionPane.showInputDialog("nome do cliente");
+                                cod = JOptionPane.showInputDialog("codigo do produto");
+                                
+                                {
+                                    try {
+                                        
+                                        Validacao.existeCliente(nome, lc);
+                                        Validacao.existeProduto(nome, lp);
+                                        c.addCliente(lp.buscaProduto(cod));
+                                        c.produtosComprados();
+                                        
+                                    } catch (ExClienteInexistente ex) {
+                                        JOptionPane.showMessageDialog(null, "cliente nao existe");
+                                    } catch (ExProdutoInexistente ex) {
+                                        JOptionPane.showMessageDialog(null, "produto nao existe");
+                                    }
+                                }
                                 break;
                             case "2":
                                 break;
