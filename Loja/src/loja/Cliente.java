@@ -14,6 +14,15 @@ public class Cliente {
         this.Endereço = Endereço;
         this.telefone = telefone;
         this.Email = Email;
+        this.listP = new ListaProduto();
+    }
+
+    public void produtosComprados() {
+        listP.imprimeProduto();
+    }
+
+    public void addCliente(Produto p) {
+        this.listP.addProduto(p);
     }
 
     public String getNome() {

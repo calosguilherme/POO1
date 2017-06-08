@@ -4,14 +4,14 @@ package loja;
 
 public class Produto {
     private String nome;
-    private int código;
+    private String codigo;
     private String marca;
     private String descrição;
     private float preço;
 
-    public Produto(String nome, int código, String marca, String descrição, float preço) {
+    public Produto(String nome, String codigo, String marca, String descrição, float preço) {
         this.nome = nome;
-        this.código = código;
+        this.codigo = codigo;
         this.marca = marca;
         this.descrição = descrição;
         this.preço = preço;
@@ -25,12 +25,12 @@ public class Produto {
         this.nome = nome;
     }
 
-    public int getCódigo() {
-        return código;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setCódigo(int código) {
-        this.código = código;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public String getMarca() {
