@@ -47,8 +47,10 @@ public class Loja {
                 case "3":
                     while(!x2.equals("0")){
                         x2 = JOptionPane.showInputDialog("digite 1 - alocar produto ao cliente \n"
-                                + "digite 2 - excluir produto \n"
-                                + "digite 3 - buscar produto \n"
+                                + "digite 2 - excluir produto do cliente \n"
+                                + "digite 3 - excluir produto da loja \n"
+                                + "digite 4 - buscar produto da loja \n"
+                                + "digite 5 - excluir cliente \n"
                                 + "digite 0 - sair");
                         switch(x2){
                             case "1":
@@ -59,8 +61,8 @@ public class Loja {
                                     try {
                                         
                                         Validacao.existeCliente(nome, lc);
-                                        Validacao.existeProduto(nome, lp);
-                                        c.addCliente(lp.buscaProduto(cod));
+                                        Validacao.existeProduto(cod, lp);
+                                        c.addCliente(lp.getCodProduto(cod));
                                         c.produtosComprados();
                                         
                                     } catch (ExClienteInexistente ex) {
@@ -71,8 +73,62 @@ public class Loja {
                                 }
                                 break;
                             case "2":
+                                nome = JOptionPane.showInputDialog("nome do cliente");
+                                cod = JOptionPane.showInputDialog("codigo do produto");
+                                
+                                {
+                                    try {
+                                        
+                                        Validacao.existeCliente(nome, lc);
+                                        Validacao.existeProduto(cod, lp);
+                                        c.retirarProduto(cod);
+                                        
+                                        
+                                    } catch (ExClienteInexistente ex) {
+                                        JOptionPane.showMessageDialog(null, "cliente nao existe");
+                                    } catch (ExProdutoInexistente ex) {
+                                        JOptionPane.showMessageDialog(null, "produto nao existe");
+                                    }
+                                }
                                 break;
                             case "3":
+                                cod = JOptionPane.showInputDialog("codigo do produto");
+                                {
+                                    try {
+                                        Validacao.existeProduto(cod, lp);
+                                        lp.excluirProduto(cod);
+                                        lp.imprimeProduto();
+                                    } catch (ExProdutoInexistente ex) {
+                                        Logger.getLogger(Loja.class.getName()).log(Level.SEVERE, null, ex);
+                                    }
+                                }
+                                break;
+                            case "4":
+                                cod = JOptionPane.showInputDialog("codigo do produto");
+                                {
+                                    try {
+                                        Validacao.existeProduto(cod, lp);
+                                        lp.buscaProduto(cod);
+                                    } catch (ExProdutoInexistente ex) {
+                                        Logger.getLogger(Loja.class.getName()).log(Level.SEVERE, null, ex);
+                                    }
+                                }
+                                
+                                
+                                break;
+                            case "5":
+                                nome = JOptionPane.showInputDialog("nome cliente");
+                                {
+                                    try {
+                                        Validacao.existeCliente(nome, lc);
+                                        lc.excluiCLiente(nome);
+                                        lc.imprimeCliente();
+                                    } catch (ExClienteInexistente ex) {
+                                        Logger.getLogger(Loja.class.getName()).log(Level.SEVERE, null, ex);
+                                    }
+                                }
+                                        lc.excluiCLiente(nome);
+                                        lc.imprimeCliente();
                                 break;
                             default:
                                 System.out.println("ok");

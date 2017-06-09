@@ -20,7 +20,7 @@ public class ListaProduto extends ArrayList<Produto>{
                     + this.get(i).getPreco()); //imprimindo a posicao da lista produto
     }
     
-    public Produto buscaProduto(String cod){
+    public Produto getCodProduto(String cod){
         for(Produto p: this){
             if(p.getCodigo().equals(cod)){
                 return p;
@@ -29,11 +29,29 @@ public class ListaProduto extends ArrayList<Produto>{
         return null;
     }
     
-     public void excluiProduto(String cod){
+    public void buscaProduto(String cod){
+        
         for(Produto p: this){
             if(p.getCodigo().equals(cod)){
-                this.remove(p);
+                System.out.println("codigo:"+p.getCodigo()+ "nome: " 
+                    + p.getNome() + " marca: " 
+                    + p.getMarca() + " descricao: "
+                    + p.getDescrição() + " preco: "
+                    + p.getPreco()); //imprimindo a posicao da lista produto
             }
+        }
+    }
+    
+     public void excluirProduto(String cod){
+         
+        for(int i = 0; i < this.size(); i++)
+        {
+            Produto p = this.get(i);
+            if(p.getNome().equals("Pedro"))
+            {
+                this.remove(p);
+                break;
+           }
         }
      }
     }

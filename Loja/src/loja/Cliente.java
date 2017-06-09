@@ -16,6 +16,10 @@ public class Cliente {
         this.email = email;
         this.listP = new ListaProduto();
     }
+    
+    public void retirarProduto(String cod){
+        listP.excluirProduto(cod);
+    }
 
     public void produtosComprados() {
         listP.imprimeProduto();
